@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ylen-api
+  namespace: ylen-namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ylen-api
+  template:
+    metadata:
+      labels:
+        app: ylen-api
+    spec:
+      containers:
+        - name: ylen-api
+          image: imperialacrdev.azurecr.io/ylen-api:v1
